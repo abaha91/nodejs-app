@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const port = 80;
+const port = process.env.PORT || 80;
 
 app.use(express.static(path.join(__dirname, '../', 'build')));
 
@@ -9,4 +9,6 @@ app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, '../', 'build', 'index.html'));
 });
 
-app.listen(port);
+app.listen(port, function(){
+    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+});

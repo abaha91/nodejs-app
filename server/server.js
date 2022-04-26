@@ -10,5 +10,5 @@ app.get('/*', function (req, res) {
 });
 
 const listener = app.listen(port, function(){
-    console.log('Listening on port ' + listener.address().port); //Listening on port 8888
+    console.log('Listening on port ' + listener.address().port);
 });
